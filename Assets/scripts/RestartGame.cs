@@ -26,14 +26,14 @@ public class RestartGame : MonoBehaviour
     #endregion
 
 
-    #region Public methods
+    #region Private methods
     void RestartButton_OnClick()
     {
         game.GetComponent<Game>().ResetGame();
     }
 
 
-    void MainMenuButton_OnClick()
+     void MainMenuButton_OnClick()
     {
         SceneManager.LoadScene(MENU_SCENE_NAME);
     }

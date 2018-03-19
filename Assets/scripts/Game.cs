@@ -70,6 +70,7 @@ public class Game : MonoBehaviour
 
     void Update () {
         CheckTap();
+        
         if (isMoveStarted && !stick.GetComponent<Stick>().IsReady)
         {
             stick.GetComponent<Stick>().StretchStick();
@@ -182,13 +183,13 @@ public class Game : MonoBehaviour
 
     void CheckTap()
     {
-        if (Input.GetMouseButtonDown(0) && character.GetComponent<Character>().IsReady && !isMoveStarted)
+        if (Input.GetMouseButtonDown(0) && character.GetComponent<Character>().IsReady && !isMoveStarted && !isMoveGoing)
         {
             isMoveStarted = true;
         }
-        if (Input.GetMouseButtonUp(0) && character.GetComponent<Character>().IsReady && isMoveStarted)
+        if (Input.GetMouseButtonUp(0) && character.GetComponent<Character>().IsReady && isMoveStarted && !isMoveGoing)
         {
-            StartMoving();
+            StartMoving(); 
         }
     }
     
